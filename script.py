@@ -4,8 +4,6 @@ from prettytable import PrettyTable
 browser=webdriver.PhantomJS(executable_path="C:\\Users\\Bhasi\\Desktop\\Sonus Files\\phantomjs.exe")
 
 file =open('results.txt','w')
-import time
-start_time=time.time()
 def getMarks(roll):
     browser.get("http://cbseresults.nic.in/class12/cbse122015_all.htm")
     browser.find_element_by_tag_name("input").send_keys(roll)
@@ -55,4 +53,3 @@ while start<=stop:
     with open('results.txt', 'a') as the_file:
         the_file.write(getMarks(str(start)))
     start+=1
-print (time.time()-start_time)
